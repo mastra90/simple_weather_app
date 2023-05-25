@@ -1,0 +1,71 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: 0 ; 
+    font-family: 'Fjalla One', sans-serif;
+  }
+  
+  body {
+      background-color: #02315E;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+  }
+  
+  .container {
+     width: 100vw;
+     height: 50vh;
+     margin-top: auto;
+     margin-bottom: auto;
+     display: flex;
+     flex-direction: column;
+     justify-content: space-around;
+     align-items: center;
+     border: 2px solid white;
+     border-radius: 4px;
+  }
+  
+  .container h1 {
+      color: white;
+      font-size: 40px;
+      font-weight: 100;
+  }
+  
+  #location {
+      padding: 10px 4px;
+      border-radius: 6px;
+  }
+  
+  #submit-button {
+      padding: 10px 4px;
+      margin-left: 12px;
+      border-radius: 6px;  
+      background-color: #ED413E; 
+      color: white;
+  }
+  
+  #submit-button:hover {
+      background-color: #d61e1b;
+      
+  }
+  
+  #submit-button-icon {
+      color: white;
+  }
+  
+  .weather {
+      background-color: white;
+      padding: 20px;
+      width: 150px;
+      height: 250px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      border-radius: 8px;
+      font-size: 24px;
+  
+  
+  }
+  
