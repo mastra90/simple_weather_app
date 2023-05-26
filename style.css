@@ -2,7 +2,9 @@
   padding: 0;
   margin: 0;
   border: 0 ; 
-  font-family: 'Fjalla One', sans-serif;
+  box-sizing: border-box;
+  font-weight: normal;
+  
 }
 
 body {
@@ -11,40 +13,70 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    
+    font: 1rem/1.3 "Roboto", sans-serif;
 }
 
 .container {
    width: 50vw;
-   height: 50vh;
+   height: 70vh;
    margin-top: auto;
    margin-bottom: auto;
    display: flex;
    flex-direction: column;
    justify-content: space-around;
    align-items: center;
-   border: 2px solid white;
+   /* border: 1px solid white; */
    border-radius: 4px;
+}
+
+.card {
+    background-color: white;
+    padding: 20px;
+    margin-top: -120px;
+    width: 250px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    border-radius: 8px;
 }
 
 .container h1 {
     color: white;
-    font-size: 40px;
-    font-weight: 100;
+    font-size: 64px;
+    font-weight: bold;
+    font-size: 4rem;
+    margin-bottom: -100px;
 }
 
 #location {
     padding: 10px 4px;
-    border-radius: 6px;
+    background-color: #02315E;
+    caret-color: white;
+    color: white;
+    border-bottom: solid white;
+    width: 15vw;
+    border-width: 2px;
+    outline: none;
+    font-size: 24px;
+    
+}
+
+input::placeholder {
+    color: rgb(210, 206, 206);
+    font-weight:10;
+    font-size: 24px;
 }
 
 #submit-location {
-    padding: 10px 4px;
+    padding: 10px;
     margin-left: 12px;
     border-radius: 6px;  
     background-color: #ED413E; 
     color: white;
     cursor:pointer;
+    font-size: 24px;
+    width: 5vw;
 }
 
 #submit-location:hover {
@@ -54,18 +86,47 @@ body {
 
 #submit-location-icon {
     color: white;
+    font-size: 24px;
 }
 
-.weather {
-    background-color: white;
-    padding: 20px;
-    width: 150px;
-    height: 250px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    border-radius: 8px;
+.humid_number {
+    font-size: 36px;
+}
+
+.humid_text {
+    font-size: 20px;
+}
+
+.humid-group {
+    margin-top: 40px; /* Adjust the margin value as needed */
+    
+  }
+
+.destination {
+    margin-top: 20px;
     font-size: 24px;
+    color: rgb(78, 78, 78);
+}
 
+.degree {
+    font-size: 48px;
+    font-weight: bold;
+    font-size: 4rem;
+    display: flex;
+    align-items: flex-start;
+}
 
+.degree span {
+    font-size: 24px;
+    
+}
+
+.degree span.deg-symbol {
+    margin-top: 12px;
+    margin-left: -4px;
+}
+
+.degree span.deg-c {
+    margin-top: 12px;
+    font-weight: 100;
 }

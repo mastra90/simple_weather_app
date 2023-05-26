@@ -8,22 +8,25 @@
     <title>Weather app</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@800&display=swap" rel="stylesheet"> -->
 </head>
 <body>
     
  <div class="container">
     <h1>Simple weather app</h1>
     <form action="/" method="GET" id="form">
-        <input type="text" name="location" id="location">
-        <input type="submit" value="See Weather!" id="submit-location">
+        <input type="text" name="location" id="location" placeholder="Search for a city...">
+        <input type="submit" value="Search" id="submit-location">
         <i class="fa fa-magnifying-glass" id="submit-location-icon"></i>
     </form>
 
-    <div class="weather">
+    <div class="card">
         <h4 class="destination"></h4>
-        <p class="degree"><span>°C</span></p>
-        <p class="humid"><em>%</em></p>
+        <p class="degree"></p>
+            <div class="humid-group">
+                <p class="humid_text"></p>
+                <p class="humid_number"></p>
+            </div>
     </div>
  </div> 
  <script src="app.js"></script>  

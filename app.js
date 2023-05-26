@@ -1,4 +1,4 @@
-// JavaScript:
+
 updateWeatherFromApi ({location: "Melbourne"})
 
 const btn = document.getElementById("form");
@@ -16,30 +16,22 @@ async function updateWeatherFromApi ({location}) {
 
 async function fetchWeatherFromAPI(location) {
     let url = `http://api.weatherapi.com/v1/current.json?key=6e2a12cd17ee48559d2120102232505&q=${encodeURIComponent(location)}`;
-
     try {
         const response = await fetch(url);
-
-    const data = await response.json();
+        const data = await response.json();
     return data;
-}   
-    catch (err) {
+}   catch (err) {
     console.log(err.error);
-}
-}
+}}
 
-
-
-
-function updateWeatherInDom({current:{humidity, temp_c}, location}) {
+function updateWeatherInDom({ current: { humidity, temp_c }, location }) {
     const destination = document.querySelector(".destination");
     const degree = document.querySelector(".degree");
-    const humid = document.querySelector(".humid");
+    const humid_text = document.querySelector(".humid_text");
+    const humid_number = document.querySelector(".humid_number");
 
     destination.innerHTML = location;
-    degree.innerHTML = `${temp_c}<span>°C</span>`;
-    humid.innerHTML = `${humidity}<em>%</em>`;
-
-
-    // console.log(location, humidity, temp_c)
+    degree.innerHTML = `${temp_c}<span class="deg-symbol">°</span><span class="deg-c">C</span>`;
+    humid_text.innerHTML = "<em>Humidity</em>";
+    humid_number.innerHTML = `${humidity}<em>%</em>`;
 }
