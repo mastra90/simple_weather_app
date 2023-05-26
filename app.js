@@ -1,23 +1,20 @@
+// JavaScript:
 
-
-const btn = document.getElementById ("submit-button");
-btn.addEventListener("click", async (e) => {
-    const input = document.getElementById ("location");
-    const response = await fetchWeatherFromAPI(input.value);
-    console.log(response);
+// const btn = document.getElementById("submit-button");
+const btn = document.getElementById("form");
+btn.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const response = await fetchWeatherFromAPI(e.target[0].value);
+  e.target[0].value = "";
+  updateWeatherInDom(response)
+  console.log(response);
 });
 
 async function fetchWeatherFromAPI(location) {
-    let url = `https://api.api-ninjas.com/v1/weather?city=${location}`;
-    const apiKey = "gGxXpwmck2VMOMzUYrWpUA==w4Ds6hsi7BpTaMka";
+    let url = `http://api.weatherapi.com/v1/current.json?key=6e2a12cd17ee48559d2120102232505&q=${encodeURIComponent(location)}`;
 
     try {
-        const response = await fetch(url, {
-            method: "GET",
-            headers: {
-                "X-Api-Key": apiKey,
-            },
-    });
+        const response = await fetch(url);
 
     const data = await response.json();
     return data;
@@ -27,3 +24,10 @@ async function fetchWeatherFromAPI(location) {
 }
 }
 
+
+
+// {current.humidity: 62, current.temp_c: 13}
+
+function updateWeatherInDom({current:{humidity, temp_c}}) {
+    console.log(humidity, temp_c)
+}
